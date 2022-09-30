@@ -1,0 +1,11 @@
+1. A interface funciona como um "contrato" que é assinado pela classe.
+Quando implementado por elas, é necessário que estas incluam em seu
+código os mesmos métodos cujas assinaturas estão definidas na interface
+implementada. Isso garante a possibilidade de utilizar do polimorfismo de
+subtipo e permite um código mais extensível, pois faz uso de um grau a mais
+de abstração na construção do sistema.
+
+4.
+- Sim, todos os métodos implementados seguem o mesmo padrão.
+- Sim.
+- Sim, é possível por meio de uma coleção que trate apenas de Produtos.
