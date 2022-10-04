@@ -22,10 +22,10 @@ public class RepositorioProdutoArray implements RepositorioProduto {
     }
 
     public boolean existe(int codigo) {
-        for (Produto p : this.produtos) {
-            if (p != null && p.getCodigo() == codigo) return true;
+        if (procurarIndice(codigo) == -1) {
+            return false;
         }
-        return false;
+        return true;
     }
 
     public void inserir(Produto produto) {
@@ -55,10 +55,12 @@ public class RepositorioProdutoArray implements RepositorioProduto {
     }
 
     public Produto procurar(int codigo) {
-        for (Produto p : this.produtos) {
-            if (p != null && p.getCodigo() == codigo) return p;
+        int indice = procurarIndice(codigo);
+        if (indice == -1) {
+            throw new RuntimeException();
         }
-        throw new RuntimeException();
+        return this.produtos[indice];
+
     }
 
     private void moveProdutosParaEsquerda(int indiceInicio) {
